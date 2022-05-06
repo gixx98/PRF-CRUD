@@ -1,0 +1,41 @@
+<div class="card mx-auto" style="width: 400px; margin-top:20px;" *ngIf="authService.getUserUID() == 'sP5u2UC292MYoJDQGvPJGURinrf2'">
+  <article class="card-body" >
+    <h4 class="card-title text-center mb-4 mt-1 " style="font-size: 28px;">Termék hozzáadása</h4>
+    <hr>
+    <form [formGroup]="productAddForm">
+    <div class="form-group mt-1">
+    <div class="input-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <mat-icon>info</mat-icon> </span>
+       </div>
+      <input name="" class="form-control" placeholder="Név" type="text" formControlName="name" #productName>
+    </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    <div class="input-group mt-2" >
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <mat-icon> attach_money</mat-icon> </span>
+       </div>
+        <input class="form-control" placeholder="Ár" type="number" formControlName="price" #productPrice>
+    </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group text-center">
+    <button type="submit" (click)="addProduct()" [disabled]="!productAddForm.valid" class="btn btn-primary btn-block mt-3"> Add hozzá a terméket! </button>
+    </div> <!-- form-group// -->
+    </form>
+  </article>
+  </div> <!-- card.// -->
+
+<mat-grid-list class="mt-2" cols="5" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let product of products">
+    <mat-card>
+      <mat-card-title>
+        {{product.payload.doc.data().name}}
+      </mat-card-title>
+      <mat-card-subtitle>{{product.payload.doc.data().price}} Ft</mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-button>Vásárlás</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

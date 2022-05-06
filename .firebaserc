@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "prf01-81ec9": {
+      "hosting": {
+        "projekt": [
+          "prf01-81ec9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "prf01-81ec9"
+  }
+}

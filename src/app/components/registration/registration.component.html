@@ -1,0 +1,46 @@
+<div class="card mx-auto" style="width: 400px; margin-top:20px;">
+  <article class="card-body" >
+    <h4 class="card-title text-center mb-4 mt-1" style="font-size: 28px;">Regisztráció</h4>
+    <hr>
+    <form [formGroup]="registrationForm">
+      <div class="form-group mt-1">
+        <div class="input-group">
+          <div class="input-group-prepend">
+              <span class="input-group-text"> <mat-icon>face</mat-icon></span>
+           </div>
+          <input name="" class="form-control" placeholder="Név" type="text" formControlName="name">
+        </div> <!-- input-group.// -->
+        </div> <!-- form-group// -->
+    <div class="form-group">
+    <div class="input-group mt-2">
+      <div class="input-group-prepend">
+          <span class="input-group-text"> 	<mat-icon>account_circle</mat-icon> </span>
+       </div>
+      <input name="" class="form-control" placeholder="E-mail" type="email" formControlName="email" #userEmail>
+    </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+    <div class="input-group mt-2" >
+      <div class="input-group-prepend">
+          <span class="input-group-text"> <mat-icon>lock</mat-icon> </span>
+       </div>
+        <input class="form-control" placeholder="Jelszó" type="password" formControlName="password" #userPassword>
+    </div> <!-- input-group.// -->
+    </div> <!-- form-group// -->
+    <div class="form-group">
+      <div class="input-group mt-2" >
+        <div class="input-group-prepend">
+            <span class="input-group-text"> <mat-icon>lock</mat-icon> </span>
+         </div>
+          <input class="form-control" placeholder="Jelszó mégegyszer" type="password" formControlName="password" >
+      </div> <!-- input-group.// -->
+      </div> <!-- form-group// -->
+    <div class="form-group text-center">
+    <button  (click)="authService.SignUp(userEmail.value, userPassword.value)" type="submit" class="btn btn-primary btn-block mt-3"> Regisztrálj!  </button>
+    </div> <!-- form-group// -->
+    <p class="text-center">
+      <button [routerLink]="'/login'" class="btn btn-outline-secondary mt-3">Van már fiókom</button>
+    </p>
+    </form>
+  </article>
+  </div> <!-- card.// -->
