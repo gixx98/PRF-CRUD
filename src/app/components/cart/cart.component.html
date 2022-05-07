@@ -1,0 +1,10 @@
+<mat-list>
+  <mat-list-item *ngFor="let product of productsInCart">
+    {{product.payload.doc.data().name}}
+    {{product.payload.doc.data().price}}
+    <button mat-icon-button >
+      <mat-icon>delete</mat-icon>
+   </button>
+  </mat-list-item>
+</mat-list>
+<button mat-raised-button>Fizetés</button>

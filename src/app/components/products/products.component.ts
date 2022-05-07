@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { ProductService } from './../../services/product.service';
 import { AuthServiceService } from './../../services/auth-service.service';
 import { IProduct } from './../../../models/product.model';
@@ -33,6 +34,7 @@ export class ProductsComponent implements OnInit {
   constructor(
     public authService: AuthServiceService,
     private productService: ProductService,
+    private cartService : CartService,
     public snackBar: MatSnackBar
   ) { }
 
@@ -55,4 +57,16 @@ export class ProductsComponent implements OnInit {
     this.productAddForm.reset();
   }
 
+  addToCart(pId:any, pName:any, pPrice:any){
+    var cartProduct = {
+      id: pId,
+      name: pName,
+      price: pPrice
+    }
+    this.cartService.addToCart(cartProduct);
+
+    this.snackBar.open('Kosárba rakva', 'Bezár', {
+    duration: 3000
+  });
+  }
 }

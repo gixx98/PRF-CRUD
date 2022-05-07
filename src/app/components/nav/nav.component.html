@@ -18,6 +18,7 @@
     <div>
       <a mat-button [routerLink]="'/profile'"> {{authService.getUser()}}</a>
       <a mat-button [routerLink]="'/products'"> Termékek </a>
+      <a mat-button [routerLink]="'/cart'"> Kosár </a>
       <button style="color:red" mat-button (click)="authService.SignOut()">Kijelentkezés</button>
     </div>
   </mat-toolbar-row>

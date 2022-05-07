@@ -1,3 +1,4 @@
+import { CartComponent } from './components/cart/cart.component';
 import { ErrorComponent } from './components/error/error.component';
 import { AuthGuard } from './services/auth.guard';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'cart', component: CartComponent, canActivate: [AuthGuard]},
   {path: '404', component: ErrorComponent},
   {path: '**', redirectTo: '/404'}
 ];

@@ -13,7 +13,7 @@ export class ProductService {
 
   createProduct(input:any){
     return new Promise<any>((resolve, reject) => {
-      this.firestore.collection('products').add(input).then(res => {}, err => reject(err));
+      this.firestore.collection("products").add(input).then(res => {}, err => reject(err));
     })
   }
 

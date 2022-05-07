@@ -1,4 +1,4 @@
-<div class="card mx-auto" style="width: 400px; margin-top:20px;" *ngIf="authService.getUserUID() == 'sP5u2UC292MYoJDQGvPJGURinrf2'">
+<div class="card mx-auto" style="width: 400px; margin-top:20px; margin-bottom: 20px;" *ngIf="authService.getUserUID() == 'sP5u2UC292MYoJDQGvPJGURinrf2'">
   <article class="card-body" >
     <h4 class="card-title text-center mb-4 mt-1 " style="font-size: 28px;">Termék hozzáadása</h4>
     <hr>
@@ -26,7 +26,7 @@
   </article>
   </div> <!-- card.// -->
 
-<mat-grid-list class="mt-2" cols="5" rowHeight="2:1">
+<mat-grid-list class="mt-2" cols="5">
   <mat-grid-tile *ngFor="let product of products">
     <mat-card>
       <mat-card-title>
@@ -34,7 +34,7 @@
       </mat-card-title>
       <mat-card-subtitle>{{product.payload.doc.data().price}} Ft</mat-card-subtitle>
       <mat-card-actions>
-        <button mat-button>Vásárlás</button>
+        <button (click)="addToCart(product.payload.doc.data().name,product.payload.doc.data().name,product.payload.doc.data().price)" mat-raised-button>Kosárba</button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

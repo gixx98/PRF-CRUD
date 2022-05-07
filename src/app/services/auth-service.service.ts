@@ -118,8 +118,6 @@ export class AuthServiceService {
   }
 
   getUserUID(){
-    console.log(JSON.parse(localStorage.getItem('user')!)['uid'])
-    console.log(typeof(JSON.parse(localStorage.getItem('user')!)['uid']))
     return JSON.parse(localStorage.getItem('user')!)['uid'];
   }
 }
